@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Business Card (DC)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+        <script src="JS/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <div class="business-card middle">
+            <div class="front">
+                <h2>Angelica Hoskins</h2>
+                <h5>Web Developer</h5>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-mobile-alt"></i> +0-000-000-0000
+                    </li>
+                    <li>
+                        <i class="far fa-envelope"></i> anghos080@gmail.com
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i> Chicago, Illinois
+                    </li>
+                </ul>
+            </div>
+            <div class="back">
+                    <span><div class="qr-code"></a></div></span>
+
+                <div class="social-media">
+                    <ul class="social">
+                        <a href="https://github.com/Ahos333" class="fab fa-github"></a>
+                        <a href="https://www.linkedin.com/in/angelicahoskins/" class="fab fa-linkedin"></a>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            $(".business-card").click(function(){
+                $(".business-card").toggleClass("business-card-active");
+            });
+        </script>
+    </body>
+</html>

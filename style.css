@@ -1,0 +1,204 @@
+:root {
+    --main: #3D5A6C;
+    --light: #A5A5A5;
+    --dark: #3A2E39;
+    --decor: #0EB1D2;
+    --back: #7F7F7F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial";
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background: url(images/chicago.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+        
+}
+
+
+.business-card {
+    width: 400px;
+    height: 225px;
+    position: relative;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+}
+
+.middle {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.front,.back {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.5s linear;
+}
+
+.front {
+    background: var(--dark);
+    padding: 40px;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+.front::before, .front::after {
+    content: "";
+    position: absolute;
+    right: 0;
+}
+
+.front::before {
+    background: var(--decor);
+    width: 80px;
+    height: 120px;
+    bottom: 0;
+    clip-path: polygon(0 100%, 40% 0, 100% 100%);
+}
+
+.front::after {
+    background: var(--main);
+    width: 100px;
+    height: 100%;
+    top: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.front h2 {
+    text-transform: uppercase;
+    color: var(--light);
+
+}
+
+.front h5 {
+    background: var(--dark); 
+    color: var(--light);
+    padding: 0;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.front .contact-info li {
+    margin: 5px 0;
+    display: flex;
+    align-items: baseline;
+    color: var(--light);
+}
+
+.front .contact-info li i {
+    width: 20px;
+    height: 20px;
+    background: var(--dark);
+    border-radius: 50%;
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    margin-right: 6px;
+}
+
+i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back {
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 20px;
+    transform: perspective(600px) rotateX(-180deg);
+}
+
+span div {
+    margin-right: 30px;
+}
+
+.qr-code {
+    display: relative;
+    background: url(images/qr.jpg) no-repeat;
+    background-position: center;
+    border: 1px solid var(--main);
+    border-radius: 10px;
+    object-fit: contain;
+    width: 150px;
+    height: 150px;
+}
+
+.back::before, .back::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.back::before {
+    background: var(--decor);
+    width: 100px;
+    height: 100%;
+    top: 0;
+    clip-path: polygon(0 0, 42% 66%, 75% 0);
+}
+
+.back::after {
+    background: var(--main);
+    width: 100px;
+    height: 100%;
+    bottom: 0;
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+}
+
+.business-card-active .back {
+    transform: perspective(600px) rotateX(0deg);
+}
+
+.business-card-active .front {
+    transform: perspective(600px) rotateX(-180deg);
+}
+
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-flow: nowrap;
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+}
+
+.social {
+    margin-left: 25%;
+}
+
+.social-media ul a {
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    color: var(--light);
+    cursor: pointer;
+    margin-right: 30%;
+    align-self: center;
+}
+
+.social-media ul a:hover {
+    color: var(--back);
+}
