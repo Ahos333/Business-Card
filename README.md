@@ -8,7 +8,7 @@ Business-Card is a simple business Card with contact's name and other profession
 - Provides contact's name, job title, location, email address, and their Github and LinkedIn profiles.
 - Click the business card to flip it vertically. Can be flipped as many times as you like.
 
-## Future Feature(s): 
+## Future Feature(s) (If the Project Were To Be Continued, How Would I Improve It?): 
 - Adding more custom options for users
   - Change the background picture of the business card
   - Change the color of the business card
